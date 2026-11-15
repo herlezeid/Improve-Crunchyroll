@@ -29,3 +29,4 @@ npm run deploy         # mostra a URL https://ic-watch-party.<sua-conta>.workers
 ```
 
 Depois troque `PARTY_DEFAULT_SERVER` em `lib/background/party.js` pela URL publicada, com `wss://`.
+O servidor deste fork está em `wss://ic-watch-party.ic-watch-party.workers.dev`.
