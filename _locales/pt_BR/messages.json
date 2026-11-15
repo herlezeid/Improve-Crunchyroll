@@ -266,6 +266,141 @@
   "openHeaderMenuOnHover": {
     "message": "Abra o menu de cabeçalho ao passar o mouse"
   },
+  "partyAutoplayBlocked": {
+    "message": "O navegador bloqueou o play automático."
+  },
+  "partyClickToSync": {
+    "message": "Clique para sincronizar"
+  },
+  "partyCode": {
+    "message": "Link do convite ou código da sala"
+  },
+  "partyCodePlaceholder": {
+    "message": "Cole aqui"
+  },
+  "partyConnection_connecting": {
+    "message": "Conectando…"
+  },
+  "partyConnection_error": {
+    "message": "Desconectado"
+  },
+  "partyConnection_offline": {
+    "message": "Desconectado"
+  },
+  "partyConnection_online": {
+    "message": "Conectado"
+  },
+  "partyCopied": {
+    "message": "Copiado"
+  },
+  "partyCopy": {
+    "message": "Copiar"
+  },
+  "partyCreate": {
+    "message": "Criar sala (você lidera)"
+  },
+  "partyError_background": {
+    "message": "Não consegui falar com a extensão. Recarregue-a em brave://extensions."
+  },
+  "partyError_generic": {
+    "message": "Algo deu errado. Tente de novo."
+  },
+  "partyError_name": {
+    "message": "Escolha um apelido."
+  },
+  "partyError_replaced": {
+    "message": "esta sala foi aberta em outra janela"
+  },
+  "partyError_room": {
+    "message": "Link ou código de convite inválido."
+  },
+  "partyError_server": {
+    "message": "Servidor inválido. Use um endereço wss://."
+  },
+  "partyFollowerHint": {
+    "message": "O líder controla a reprodução. Seus skips automáticos ficam pausados enquanto estiver na sala."
+  },
+  "partyFollowing": {
+    "message": "Watch party · seguindo {name} · {count}"
+  },
+  "partyIntro": {
+    "message": "Assistam juntos: cada um usa a própria conta do Crunchyroll e o líder controla play, pausa, avanço e episódios."
+  },
+  "partyInvite": {
+    "message": "Link de convite"
+  },
+  "partyInvitePrompt": {
+    "message": "Entrar nesta watch party{server}? Digite seu apelido:"
+  },
+  "partyJoin": {
+    "message": "Entrar na sala"
+  },
+  "partyJoinFailed": {
+    "message": "Não consegui entrar na watch party."
+  },
+  "partyLeader": {
+    "message": "líder"
+  },
+  "partyLeaderHint": {
+    "message": "Você lidera: o que você der play, pausar, pular ou abrir, todo mundo segue."
+  },
+  "partyLeaderOnly": {
+    "message": "Só o líder controla a sessão"
+  },
+  "partyLeave": {
+    "message": "Sair da sala"
+  },
+  "partyName": {
+    "message": "Seu apelido"
+  },
+  "partyNamePlaceholder": {
+    "message": "ex.: Zeid"
+  },
+  "partyOr": {
+    "message": "ou"
+  },
+  "partyPromote": {
+    "message": "Passar liderança"
+  },
+  "partyReconnect": {
+    "message": "Reconectar"
+  },
+  "partyReconnecting": {
+    "message": "Watch party · reconectando…"
+  },
+  "partyServer": {
+    "message": "Servidor (avançado)"
+  },
+  "partyStartNow": {
+    "message": "Começar agora"
+  },
+  "partyStatus_blocked": {
+    "message": "precisa clicar"
+  },
+  "partyStatus_buffering": {
+    "message": "sincronizando"
+  },
+  "partyStatus_idle": {
+    "message": "fora do player"
+  },
+  "partyStatus_loading": {
+    "message": "carregando"
+  },
+  "partyStatus_ready": {
+    "message": "sincronizado"
+  },
+  "partyStatus_unavailable": {
+    "message": "episódio indisponível"
+  },
+  "partyWaiting": {
+    "message": "Esperando {names}…"
+  },
+  "partyYou": {
+    "message": "você"
+  },
+  "partyYouLead": {
+    "message": "Watch party · você lidera · {count}"
+  },
   "pictureInPicture": {
     "message": "Picture-in-Picture"
   },
@@ -375,6 +510,9 @@
   },
   "value": {
     "message": "Valor"
+  },
+  "watchParty": {
+    "message": "Watch party"
   },
   "whileFullscreen": {
     "message": "Enquanto em tela cheia"

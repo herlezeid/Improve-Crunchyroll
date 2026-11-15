@@ -80,6 +80,7 @@
         "lib/content_scripts/website/pages/watch/player/player.js",
         "lib/content_scripts/website/fillers/fillers.js",
         "lib/content_scripts/website/pages/watch/watch.js",
+        "lib/content_scripts/website/party/party.js",
         "lib/content_scripts/website/main.js"
       ],
       "css": [
@@ -96,6 +97,7 @@
         "lib/content_scripts/website/pages/watch/watch.css",
         "lib/content_scripts/website/pages/utils.css",
         "lib/content_scripts/website/fillers/fillers.css",
+        "lib/content_scripts/website/party/party.css",
         "lib/content_scripts/website/main.css"
       ],
       "run_at": "document_idle"

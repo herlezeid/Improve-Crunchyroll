@@ -3,6 +3,12 @@
 > de pular fillers (perguntar ou automático) em *Integrações → Fillers*. A série é casada pelo título; se errar,
 > clique no selo do episódio para apontar o link certo do AFL ou ajustar a numeração. Única permissão extra:
 > leitura de `https://www.animefillerlist.com/*`.
+>
+> **Watch party.** Salas para assistir junto (*Watch party* no popup): cada pessoa usa a própria conta do
+> Crunchyroll e o líder controla play, pausa, avanço, velocidade e troca de episódio — inclusive os skips de
+> abertura e de filler. Ao trocar de episódio, o play espera todo mundo carregar. O relay é um Cloudflare
+> Worker em [`party-server/`](party-server/); pelo servidor passam só o ID do episódio, posição, play/pause,
+> velocidade e apelidos — nenhum cookie, token ou dado da conta.
 
 # Improve Crunchyroll
 

@@ -1,0 +1,12 @@
+{
+  "name": "ic-watch-party",
+  "private": true,
+  "description": "Relay das salas de watch party do Improve Crunchyroll (fork). Cloudflare Worker + Durable Objects.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
+  }
+}

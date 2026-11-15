@@ -266,6 +266,141 @@
   "openHeaderMenuOnHover": {
     "message": "Abrir menú de encabezado al pasar el mouse"
   },
+  "partyAutoplayBlocked": {
+    "message": "The browser blocked autoplay."
+  },
+  "partyClickToSync": {
+    "message": "Click to sync"
+  },
+  "partyCode": {
+    "message": "Invite link or room code"
+  },
+  "partyCodePlaceholder": {
+    "message": "Paste here"
+  },
+  "partyConnection_connecting": {
+    "message": "Connecting…"
+  },
+  "partyConnection_error": {
+    "message": "Disconnected"
+  },
+  "partyConnection_offline": {
+    "message": "Offline"
+  },
+  "partyConnection_online": {
+    "message": "Connected"
+  },
+  "partyCopied": {
+    "message": "Copied"
+  },
+  "partyCopy": {
+    "message": "Copy"
+  },
+  "partyCreate": {
+    "message": "Create room (you lead)"
+  },
+  "partyError_background": {
+    "message": "Could not reach the extension. Reload it in brave://extensions."
+  },
+  "partyError_generic": {
+    "message": "Something went wrong. Try again."
+  },
+  "partyError_name": {
+    "message": "Choose a nickname."
+  },
+  "partyError_replaced": {
+    "message": "this room was opened in another window"
+  },
+  "partyError_room": {
+    "message": "Invalid invite link or code."
+  },
+  "partyError_server": {
+    "message": "Invalid server. Use a wss:// address."
+  },
+  "partyFollowerHint": {
+    "message": "The leader controls playback. Your own auto-skips are paused while you are in the room."
+  },
+  "partyFollowing": {
+    "message": "Watch party · following {name} · {count}"
+  },
+  "partyIntro": {
+    "message": "Watch together: everyone uses their own Crunchyroll account and the leader controls play, pause, seeking and episodes."
+  },
+  "partyInvite": {
+    "message": "Invite link"
+  },
+  "partyInvitePrompt": {
+    "message": "Join this watch party{server}? Type your nickname:"
+  },
+  "partyJoin": {
+    "message": "Join room"
+  },
+  "partyJoinFailed": {
+    "message": "Could not join the watch party."
+  },
+  "partyLeader": {
+    "message": "leader"
+  },
+  "partyLeaderHint": {
+    "message": "You lead: whatever you play, pause, skip or open, everyone follows."
+  },
+  "partyLeaderOnly": {
+    "message": "Only the leader controls the session"
+  },
+  "partyLeave": {
+    "message": "Leave room"
+  },
+  "partyName": {
+    "message": "Your nickname"
+  },
+  "partyNamePlaceholder": {
+    "message": "e.g. Zeid"
+  },
+  "partyOr": {
+    "message": "or"
+  },
+  "partyPromote": {
+    "message": "Make leader"
+  },
+  "partyReconnect": {
+    "message": "Reconnect"
+  },
+  "partyReconnecting": {
+    "message": "Watch party · reconnecting…"
+  },
+  "partyServer": {
+    "message": "Server (advanced)"
+  },
+  "partyStartNow": {
+    "message": "Start now"
+  },
+  "partyStatus_blocked": {
+    "message": "needs a click"
+  },
+  "partyStatus_buffering": {
+    "message": "syncing"
+  },
+  "partyStatus_idle": {
+    "message": "not watching"
+  },
+  "partyStatus_loading": {
+    "message": "loading"
+  },
+  "partyStatus_ready": {
+    "message": "in sync"
+  },
+  "partyStatus_unavailable": {
+    "message": "episode unavailable"
+  },
+  "partyWaiting": {
+    "message": "Waiting for {names}…"
+  },
+  "partyYou": {
+    "message": "you"
+  },
+  "partyYouLead": {
+    "message": "Watch party · you lead · {count}"
+  },
   "pictureInPicture": {
     "message": "Picture-in-Picture"
   },
@@ -375,6 +510,9 @@
   },
   "value": {
     "message": "Valor"
+  },
+  "watchParty": {
+    "message": "Watch party"
   },
   "whileFullscreen": {
     "message": "Mientras está en pantalla completa"
