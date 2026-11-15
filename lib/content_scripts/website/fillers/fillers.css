@@ -78,6 +78,18 @@
   transform: rotate(45deg);
 }
 
+.ic-filler-badge-wrapper.floating {
+  position: fixed;
+  top: 76px;
+  left: 16px;
+  z-index: 2147482000;
+  margin: 0;
+}
+
+.ic-filler-tag + .ic-filler-tag {
+  display: none;
+}
+
 /* ---- menu do selo ---- */
 
 .ic-filler-menu {

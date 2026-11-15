@@ -147,6 +147,9 @@
   "fillerEpisodeN": {
     "message": "Episode #{n}"
   },
+  "fillerError": {
+    "message": "Fillers: error"
+  },
   "fillerFixOffset": {
     "message": "Adjust episode numbering…"
   },
@@ -173,6 +176,9 @@
   },
   "fillerResetFix": {
     "message": "Reset manual fixes"
+  },
+  "fillerRetry": {
+    "message": "try again"
   },
   "fillers": {
     "message": "Fillers (AnimeFillerList)"
