@@ -132,8 +132,20 @@
   "fillerBannerAsk": {
     "message": "This episode is {type} (AFL #{n})."
   },
+  "fillerBannerAskDetail": {
+    "message": "Skip to the next episode you watch?"
+  },
   "fillerBannerNoTarget": {
     "message": "This episode is {type} (AFL #{n}) and no later episode to watch is available."
+  },
+  "fillerBannerNoTargetDetail": {
+    "message": "No later episode to watch is available."
+  },
+  "fillerClose": {
+    "message": "Close"
+  },
+  "fillerEpisodeN": {
+    "message": "episode #{n}"
   },
   "fillerFixOffset": {
     "message": "Adjust episode numbering…"
@@ -170,6 +182,12 @@
   },
   "fillerShowUnavailable": {
     "message": "AnimeFillerList unavailable"
+  },
+  "fillerSkippedDetail": {
+    "message": "{count} episode(s) · AFL {range}"
+  },
+  "fillerSkippedTitle": {
+    "message": "Fillers skipped"
   },
   "fillerSkippedToast": {
     "message": "Skipped {count} episode(s) (AFL {range})."
@@ -266,6 +284,9 @@
   "openHeaderMenuOnHover": {
     "message": "Kopfzeilenmenü beim Hover öffnen"
   },
+  "partyAlone": {
+    "message": "Nobody else yet. Send the invite link to your friends."
+  },
   "partyAutoplayBlocked": {
     "message": "The browser blocked autoplay."
   },
@@ -296,6 +317,9 @@
   "partyCopy": {
     "message": "Copy"
   },
+  "partyCopyInvite": {
+    "message": "Copy invite link"
+  },
   "partyCreate": {
     "message": "Create room (you lead)"
   },
@@ -323,6 +347,12 @@
   "partyFollowing": {
     "message": "Watch party · following {name} · {count}"
   },
+  "partyFollowingShort": {
+    "message": "Following {name}"
+  },
+  "partyHeroTitle": {
+    "message": "Watch together"
+  },
   "partyIntro": {
     "message": "Watch together: everyone uses their own Crunchyroll account and the leader controls play, pause, seeking and episodes."
   },
@@ -338,6 +368,9 @@
   "partyJoinFailed": {
     "message": "Could not join the watch party."
   },
+  "partyJoinSection": {
+    "message": "Join with an invite"
+  },
   "partyLeader": {
     "message": "leader"
   },
@@ -350,6 +383,9 @@
   "partyLeave": {
     "message": "Leave room"
   },
+  "partyMembersTitle": {
+    "message": "In the room · {count}"
+  },
   "partyName": {
     "message": "Your nickname"
   },
@@ -359,14 +395,26 @@
   "partyOr": {
     "message": "or"
   },
+  "partyPeople": {
+    "message": "{count} in the room"
+  },
   "partyPromote": {
     "message": "Make leader"
+  },
+  "partyPromoteShort": {
+    "message": "Lead"
   },
   "partyReconnect": {
     "message": "Reconnect"
   },
   "partyReconnecting": {
     "message": "Watch party · reconnecting…"
+  },
+  "partyReconnectingShort": {
+    "message": "Reconnecting…"
+  },
+  "partyRoom": {
+    "message": "Room"
   },
   "partyServer": {
     "message": "Server (advanced)"
@@ -395,11 +443,17 @@
   "partyWaiting": {
     "message": "Waiting for {names}…"
   },
+  "partyWaitingTitle": {
+    "message": "Waiting for everyone to load"
+  },
   "partyYou": {
     "message": "you"
   },
   "partyYouLead": {
     "message": "Watch party · you lead · {count}"
+  },
+  "partyYouLeadShort": {
+    "message": "You lead"
   },
   "pictureInPicture": {
     "message": "Bild-in-Bild"

@@ -1,131 +1,356 @@
 .party {
   display: grid;
-  gap: 10px;
-  padding: 12px 16px 16px;
+  gap: 8px;
+  padding: 14px 12px 18px;
   color: var(--secondary-font);
 }
 
-.party-hint {
-  margin: 0;
+/* ---- blocos ---- */
+
+.party-label {
+  margin-top: 6px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--crunchyroll-orange);
+}
+
+.party-card {
+  border-radius: var(--radius, 10px);
+  background: var(--primary);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+.party-card-body {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.party-card-body.row {
+  grid-template-columns: 1fr auto;
+}
+
+/* ---- apresentação ---- */
+
+.party-hero {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 2px 4px 4px;
+}
+
+.party-hero-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--orange-soft);
+}
+
+.party-hero-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--crunchyroll-orange);
+}
+
+.party-hero-text {
+  display: grid;
+  gap: 3px;
+}
+
+.party-hero-title {
+  font-size: 15px;
+}
+
+.party-hero-sub {
   color: var(--primary-font);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.45;
 }
 
-.party-field {
-  display: grid;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--primary-font);
-}
+/* ---- campos e botões ---- */
 
 .party-input {
-  height: 30px;
-  padding: 0 8px;
+  height: 36px;
   min-width: 0;
-  border: 1px solid var(--hover-background);
-  border-radius: 6px;
+  padding: 0 11px;
+  box-sizing: border-box;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
   background: var(--tertiary);
   color: var(--secondary-font);
   font: inherit;
-  font-size: 13px;
+  font-size: 13.5px;
+}
+
+.party-input::placeholder {
+  color: #5d606a;
 }
 
 .party-input:focus {
-  outline: 1px solid var(--crunchyroll-orange);
-}
-
-.party-row {
-  display: flex;
-  gap: 6px;
-}
-
-.party-row .party-input {
-  flex: 1;
+  outline: none;
+  border-color: var(--crunchyroll-orange);
+  box-shadow: 0 0 0 3px rgb(244 117 33 / 0.18);
 }
 
 .party-button {
-  height: 34px;
-  border-radius: 6px;
-  background: var(--primary);
-  font-weight: 600;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, filter 0.15s;
+}
+
+.party-button:disabled {
+  text-decoration: none;
+  opacity: 0.55;
+  cursor: progress;
 }
 
 .party-button.primary {
   background: var(--crunchyroll-orange);
-  color: #000;
+  color: #111;
 }
 
 .party-button.primary:hover {
-  background: #ff8a3d;
+  background: var(--crunchyroll-orange);
+  filter: brightness(1.1);
 }
 
-.party-divider {
-  text-align: center;
-  font-size: 12px;
+.party-button.primary.done {
+  background: #2e9e5b;
+  color: #fff;
+}
+
+.party-button.secondary {
+  background: var(--hover-background);
+  color: var(--secondary-font);
+}
+
+.party-button.secondary:hover {
+  background: #30323a;
+}
+
+.party-button.ghost {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--hairline);
+  background: transparent;
   color: var(--primary-font);
+  font-size: 11px;
 }
 
-.party-advanced summary {
+.party-button.ghost:hover {
+  border-color: rgb(244 117 33 / 0.5);
+  background: var(--orange-soft);
+  color: var(--crunchyroll-orange);
+}
+
+.party-button.danger {
+  background: transparent;
+  color: #ef6a60;
+}
+
+.party-button.danger:hover {
+  background: rgb(239 106 96 / 0.12);
+}
+
+.party-advanced {
+  padding: 4px 4px 0;
+}
+
+.party-advanced-summary {
+  margin-bottom: 8px;
+  color: var(--primary-font);
+  font-size: 12px;
   cursor: pointer;
-  font-size: 12px;
-  color: var(--primary-font);
-  margin-bottom: 6px;
 }
 
 .party-advanced .party-input {
   width: 100%;
-  box-sizing: border-box;
 }
 
-.party-connection {
-  margin: 0;
-  font-weight: 600;
-}
+/* ---- sala ---- */
 
-.party-connection[data-connection='online'] { color: #4cc27c; }
-.party-connection[data-connection='connecting'] { color: #e3ad3b; }
-.party-connection[data-connection='error'] { color: #ef6a60; }
-
-.party-members {
+.party-room {
   display: grid;
-  gap: 2px;
-  margin: 0;
-  padding: 6px 0;
-  list-style: none;
-  border-radius: 8px;
-  background: var(--primary);
+  gap: 10px;
+  padding: 14px 12px 12px;
 }
 
-.party-members li {
+.party-room-head {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 10px;
 }
 
-.party-members .party-button {
-  height: 26px;
-  padding: 0 8px;
-  font-size: 11px;
-  background: var(--hover-background);
-}
-
-.party-member-name {
+.party-room-title {
   flex: 1;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 14.5px;
+}
+
+.party-room-code {
+  flex: none;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--tertiary);
+  color: var(--primary-font);
+  font: 600 11px/1.2 ui-monospace, 'JetBrains Mono', monospace;
+}
+
+.party-room-hint {
+  margin: 0;
+  color: var(--primary-font);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.party-status-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6b6f76;
+}
+
+.party-room[data-connection='online'] .party-status-dot {
+  background: #3fbf72;
+  box-shadow: 0 0 0 3px rgb(63 191 114 / 0.18);
+}
+
+.party-room[data-connection='connecting'] .party-status-dot {
+  background: #e3ad3b;
+}
+
+.party-room[data-connection='error'] .party-status-dot {
+  background: #ef6a60;
+}
+
+/* ---- pessoas ---- */
+
+.party-members {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.party-member {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+}
+
+.party-member + .party-member {
+  border-top: 1px solid var(--hairline);
+}
+
+.party-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.party-member[data-state='leader'] .party-avatar {
+  box-shadow: 0 0 0 2px var(--primary), 0 0 0 4px var(--crunchyroll-orange);
+}
+
+.party-member-text {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.party-member-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.party-member-name > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.party-you {
+  flex: none;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--hover-background);
+  color: var(--primary-font);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .party-member-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   color: var(--primary-font);
   font-size: 12px;
 }
 
+.party-member-status .party-status-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.party-member[data-state='leader'] .party-status-dot { background: var(--crunchyroll-orange); }
+.party-member[data-state='ready'] .party-status-dot { background: #3fbf72; }
+.party-member[data-state='loading'] .party-status-dot,
+.party-member[data-state='buffering'] .party-status-dot { background: #e3ad3b; }
+.party-member[data-state='blocked'] .party-status-dot,
+.party-member[data-state='unavailable'] .party-status-dot { background: #ef6a60; }
+
+.party-member[data-state='leader'] .party-member-status { color: var(--crunchyroll-orange); }
+
+/* ---- rodapé e mensagens ---- */
+
+.party-footer {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.party-empty {
+  margin: 0;
+  padding: 0 4px;
+  color: var(--primary-font);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .party-error {
   margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgb(239 106 96 / 0.1);
   color: #ef6a60;
-  font-size: 12px;
+  font-size: 12.5px;
 }

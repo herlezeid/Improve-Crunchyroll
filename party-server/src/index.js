@@ -82,6 +82,7 @@ export default {
     headers.set('X-Room', room);
     headers.set('X-Member', await publicId(room, secret));
     headers.set('X-Name', cleanName(url.searchParams.get('name')));
+    headers.set('X-Claim', url.searchParams.get('create') === '1' ? '1' : '0');
     return env.ROOMS.get(env.ROOMS.idFromName(room)).fetch(new Request(request.url, { headers }));
   },
 };
@@ -159,6 +160,7 @@ export class Room extends DurableObject {
   async fetch(request) {
     const id = request.headers.get('X-Member');
     const name = request.headers.get('X-Name');
+    const claim = request.headers.get('X-Claim') === '1';
 
     // Reconexão do mesmo participante substitui o socket antigo.
     for (const ws of this.ctx.getWebSockets()) {
@@ -176,6 +178,12 @@ export class Room extends DurableObject {
     server.serializeAttachment({ id, name, joinedAt: Date.now(), status: { state: 'idle', mediaId: null, drift: null } });
 
     await this.ctx.storage.delete('emptySince');
+    // Quem criou a sala lidera, mesmo que alguém tenha entrado antes. Só vale uma vez por sala.
+    if (claim && !(await this.ctx.storage.get('claimed'))) {
+      await this.ctx.storage.put('claimed', true);
+      await this.ctx.storage.put('leader', id);
+      await this.ctx.storage.delete('leaderLeftAt');
+    }
     await this.#ensureLeader();
     if (!(await this.ctx.storage.get('leader'))) await this.ctx.storage.put('leader', id);
 

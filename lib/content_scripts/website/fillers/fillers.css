@@ -1,9 +1,18 @@
+/* Fork: selos de canon/filler e avisos de skip, no visual do Crunchyroll. */
+
 :root {
-  --ic-filler-canon: #2e9e5b;
-  --ic-filler-anime-canon: #2f7fd1;
-  --ic-filler-mixed: #d69a1a;
-  --ic-filler-filler: #d0443a;
-  --ic-filler-unknown: #6b6f76;
+  --ic-filler-canon: #3fbf72;
+  --ic-filler-anime-canon: #4b9cf0;
+  --ic-filler-mixed: #e8ac3a;
+  --ic-filler-filler: #ef5b50;
+  --ic-filler-unknown: #8b8f98;
+  --ic-surface: #1c1d22;
+  --ic-surface-2: #25262c;
+  --ic-hairline: rgb(255 255 255 / 0.08);
+  --ic-text: #f2f2f3;
+  --ic-muted: #a3a5ad;
+  --ic-orange: #f47521;
+  --ic-font: Lato, 'Helvetica Neue', Arial, sans-serif;
 }
 
 [data-type='canon'] { --ic-filler-color: var(--ic-filler-canon); }
@@ -12,41 +21,64 @@
 [data-type='filler'] { --ic-filler-color: var(--ic-filler-filler); }
 [data-type='unknown'] { --ic-filler-color: var(--ic-filler-unknown); }
 
+/* ---- selo na página do episódio ---- */
+
 .ic-filler-badge-wrapper {
   position: relative;
   display: inline-flex;
-  margin-top: 8px;
-}
-
-.ic-filler-badge,
-.ic-filler-tag {
-  background: var(--ic-filler-color);
-  color: #fff;
-  border: 0;
-  border-radius: 4px;
-  font: 600 0.8125rem/1.4 inherit;
-  font-family: inherit;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  margin-top: 10px;
 }
 
 .ic-filler-badge {
-  padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 28px;
+  padding: 0 10px 0 9px;
+  border: 1px solid color-mix(in srgb, var(--ic-filler-color) 45%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--ic-filler-color) 14%, transparent);
+  color: var(--ic-text);
+  font: 600 0.8125rem/1 var(--ic-font);
   cursor: pointer;
+  transition: background 0.15s;
 }
 
 .ic-filler-badge:hover {
-  filter: brightness(1.12);
+  background: color-mix(in srgb, var(--ic-filler-color) 24%, transparent);
 }
 
-.ic-filler-tag {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 1px 6px;
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  pointer-events: auto;
+.ic-filler-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ic-filler-color);
 }
+
+.ic-filler-type {
+  color: var(--ic-filler-color);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.ic-filler-meta {
+  color: var(--ic-muted);
+  font-weight: 600;
+}
+
+.ic-filler-caret {
+  width: 5px;
+  height: 5px;
+  margin: -3px 1px 0 2px;
+  border-right: 1.5px solid var(--ic-muted);
+  border-bottom: 1.5px solid var(--ic-muted);
+  transform: rotate(45deg);
+}
+
+/* ---- menu do selo ---- */
 
 .ic-filler-menu {
   display: none;
@@ -54,76 +86,221 @@
   top: calc(100% + 6px);
   left: 0;
   z-index: 1000;
-  min-width: 240px;
-  padding: 6px 0;
-  background: #23252b;
-  border-radius: 6px;
-  box-shadow: 0 6px 24px rgb(0 0 0 / 0.45);
+  min-width: 270px;
+  padding: 6px;
+  border: 1px solid var(--ic-hairline);
+  border-radius: 10px;
+  background: var(--ic-surface);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.55);
+  font-family: var(--ic-font);
 }
 
 .ic-filler-menu.open {
   display: block;
 }
 
+.ic-filler-menu-head {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--ic-hairline);
+}
+
+.ic-filler-menu-head strong {
+  color: var(--ic-text);
+  font-size: 0.875rem;
+}
+
+.ic-filler-menu-head span {
+  color: var(--ic-muted);
+  font-size: 0.75rem;
+}
+
 .ic-filler-menu-item {
   display: block;
   width: 100%;
-  padding: 8px 14px;
-  background: none;
+  padding: 9px 10px;
   border: 0;
-  color: #dadada;
-  font: inherit;
-  font-size: 0.875rem;
+  border-radius: 6px;
+  background: none;
+  color: var(--ic-text);
+  font: 500 0.875rem/1.2 var(--ic-font);
   text-align: left;
   cursor: pointer;
 }
 
 .ic-filler-menu-item:hover {
-  background: #141519;
-  color: #fff;
+  background: var(--ic-surface-2);
 }
+
+.ic-filler-menu-item.muted {
+  color: var(--ic-muted);
+}
+
+/* ---- etiqueta nos cards da série ---- */
+
+.ic-filler-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  padding: 2px 7px 2px 6px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--ic-filler-color) 16%, transparent);
+  color: var(--ic-filler-color);
+  font: 800 0.625rem/1.4 var(--ic-font);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.ic-filler-tag::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ---- aviso de skip e toast ---- */
 
 .ic-filler-banner {
   position: fixed;
-  top: 72px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2147483000;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  width: max-content;
   max-width: calc(100vw - 32px);
-  padding: 10px 12px 10px 16px;
-  background: #23252b;
-  border-left: 4px solid var(--ic-filler-color, var(--ic-filler-canon));
-  border-radius: 6px;
-  box-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
-  color: #fff;
-  font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9375rem;
+  padding: 12px 12px 12px 14px;
+  box-sizing: border-box;
+  border: 1px solid var(--ic-hairline);
+  border-radius: 12px;
+  background: rgb(28 29 34 / 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.55);
+  color: var(--ic-text);
+  font-family: var(--ic-font);
+  animation: ic-slide-down 0.25s ease-out;
 }
 
 .ic-filler-banner.toast {
   top: auto;
   bottom: 96px;
+  animation-name: ic-slide-up;
 }
 
-.ic-filler-banner button {
+.ic-filler-banner-icon {
   flex: none;
-  padding: 6px 12px;
-  background: #3a3d45;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ic-filler-color, var(--ic-orange)) 18%, transparent);
+  color: var(--ic-filler-color, var(--ic-orange));
+}
+
+.ic-filler-banner-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.ic-filler-banner-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ic-filler-banner-text strong {
+  font-size: 0.9375rem;
+}
+
+.ic-filler-banner-text span {
+  color: var(--ic-muted);
+  font-size: 0.8125rem;
+}
+
+.ic-filler-banner-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 6px;
+}
+
+.ic-filler-banner button,
+.ic-party button {
+  font-family: var(--ic-font);
+}
+
+.ic-filler-banner-actions button {
+  flex: none;
+  height: 34px;
+  padding: 0 14px;
   border: 0;
-  border-radius: 4px;
-  color: #fff;
-  font: inherit;
-  font-weight: 600;
+  border-radius: 8px;
+  background: var(--ic-surface-2);
+  color: var(--ic-text);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: filter 0.15s, background 0.15s;
 }
 
-.ic-filler-banner button.primary {
-  background: #f47521;
+.ic-filler-banner-actions button:hover {
+  background: #30323a;
 }
 
-.ic-filler-banner button:hover {
-  filter: brightness(1.15);
+.ic-filler-banner-actions button.primary {
+  background: var(--ic-orange);
+  color: #111;
+}
+
+.ic-filler-banner-actions button.primary:hover {
+  filter: brightness(1.1);
+}
+
+.ic-filler-banner-actions button.icon {
+  width: 34px;
+  padding: 0;
+  background: transparent;
+  color: var(--ic-muted);
+  font-size: 1rem;
+}
+
+.ic-filler-banner-actions button.icon:hover {
+  background: var(--ic-surface-2);
+  color: var(--ic-text);
+}
+
+@keyframes ic-slide-down {
+  from { opacity: 0; transform: translate(-50%, -8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes ic-slide-up {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (max-width: 640px) {
+  .ic-filler-banner {
+    flex-wrap: wrap;
+  }
+
+  .ic-filler-banner-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .ic-filler-banner-actions button:not(.icon) {
+    flex: 1;
+  }
 }

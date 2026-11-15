@@ -1,3 +1,5 @@
+/* Fork: painel da watch party no player, no visual do Crunchyroll. Tokens vêm de fillers.css. */
+
 .ic-party {
   position: fixed;
   left: 16px;
@@ -7,33 +9,76 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  max-width: min(360px, calc(100vw - 32px));
-  font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
+  width: min(340px, calc(100vw - 32px));
+  pointer-events: none;
+  color: var(--ic-text, #f2f2f3);
+  font-family: var(--ic-font, Lato, 'Helvetica Neue', Arial, sans-serif);
   font-size: 0.875rem;
-  color: #fff;
+}
+
+.ic-party > * {
+  pointer-events: auto;
 }
 
 .ic-party button {
-  font: inherit;
-  color: inherit;
   cursor: pointer;
 }
+
+/* ---- pílula ---- */
 
 .ic-party-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: rgb(35 37 43 / 0.92);
-  border: 0;
+  gap: 10px;
+  padding: 6px 12px 6px 6px;
+  border: 1px solid var(--ic-hairline);
   border-radius: 999px;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 0.4);
-  font-weight: 600;
-  opacity: 0.85;
+  background: rgb(28 29 34 / 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.45);
+  color: inherit;
+  opacity: 0.88;
+  transition: opacity 0.15s, background 0.15s;
 }
 
-.ic-party-pill:hover {
+.ic-party-pill:hover,
+.ic-party[data-expanded='true'] .ic-party-pill {
   opacity: 1;
+  background: rgb(37 38 44 / 0.96);
+}
+
+.ic-party-stack {
+  display: flex;
+}
+
+.ic-party-stack .ic-party-avatar {
+  width: 26px;
+  height: 26px;
+  font-size: 0.6875rem;
+  box-shadow: 0 0 0 2px #1c1d22;
+}
+
+.ic-party-stack .ic-party-avatar + .ic-party-avatar {
+  margin-left: -8px;
+}
+
+.ic-party-pill-text {
+  display: grid;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.ic-party-pill-text strong {
+  font-size: 0.8125rem;
+}
+
+.ic-party-pill-text span {
+  color: var(--ic-muted);
+  font-size: 0.75rem;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ic-party-dot {
@@ -44,86 +89,182 @@
   background: #6b6f76;
 }
 
-.ic-party[data-connection='online'] .ic-party-pill .ic-party-dot {
-  background: #2e9e5b;
+.ic-party[data-connection='online'] .ic-party-dot.connection {
+  background: #3fbf72;
+  box-shadow: 0 0 0 3px rgb(63 191 114 / 0.2);
 }
 
-.ic-party[data-connection='connecting'] .ic-party-pill .ic-party-dot {
-  background: #d69a1a;
+.ic-party[data-connection='connecting'] .ic-party-dot.connection {
+  background: #e3ad3b;
 }
 
-.ic-party-members,
-.ic-party-banner {
+/* ---- painel ---- */
+
+.ic-party-panel,
+.ic-party-notice {
   width: 100%;
   box-sizing: border-box;
-  background: #23252b;
-  border-radius: 8px;
-  box-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+  border: 1px solid var(--ic-hairline);
+  border-radius: 12px;
+  background: rgb(28 29 34 / 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.55);
+  animation: ic-party-in 0.2s ease-out;
 }
 
-.ic-party-members {
-  padding: 6px 0;
+.ic-party-panel {
+  padding: 6px;
+}
+
+.ic-party-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 8px 8px 10px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--ic-hairline);
+}
+
+.ic-party-panel-head span {
+  color: var(--ic-muted);
+  font-size: 0.75rem;
 }
 
 .ic-party-member {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: 8px;
 }
 
-.ic-party-member[data-state='leader'] .ic-party-dot { background: #f47521; }
-.ic-party-member[data-state='ready'] .ic-party-dot { background: #2e9e5b; }
-.ic-party-member[data-state='loading'] .ic-party-dot,
-.ic-party-member[data-state='buffering'] .ic-party-dot { background: #d69a1a; }
-.ic-party-member[data-state='blocked'] .ic-party-dot,
-.ic-party-member[data-state='unavailable'] .ic-party-dot { background: #d0443a; }
+.ic-party-member:hover {
+  background: var(--ic-surface-2);
+}
 
-.ic-party-name {
+.ic-party-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.ic-party-member[data-state='leader'] .ic-party-avatar {
+  box-shadow: 0 0 0 2px #1c1d22, 0 0 0 4px var(--ic-orange);
+}
+
+.ic-party-member-text {
   flex: 1;
   min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.ic-party-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.ic-party-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ic-muted);
+  font-size: 0.75rem;
+}
+
+.ic-party-status .ic-party-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.ic-party-member[data-state='leader'] .ic-party-status { color: var(--ic-orange); }
+.ic-party-member[data-state='leader'] .ic-party-dot { background: var(--ic-orange); }
+.ic-party-member[data-state='ready'] .ic-party-dot { background: #3fbf72; }
+.ic-party-member[data-state='loading'] .ic-party-dot,
+.ic-party-member[data-state='buffering'] .ic-party-dot { background: #e3ad3b; }
+.ic-party-member[data-state='blocked'] .ic-party-dot,
+.ic-party-member[data-state='unavailable'] .ic-party-dot { background: #ef6a60; }
+
+.ic-party-ghost {
+  flex: none;
+  height: 26px;
+  padding: 0 9px;
+  border: 1px solid var(--ic-hairline);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ic-muted);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+
+.ic-party-ghost:hover {
+  border-color: rgb(244 117 33 / 0.5);
+  background: rgb(244 117 33 / 0.14);
+  color: var(--ic-orange);
+}
+
+/* ---- avisos (esperando / autoplay bloqueado) ---- */
+
+.ic-party-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px 12px 14px;
+  border-left: 3px solid var(--ic-orange);
+}
+
+.ic-party-notice-text {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.ic-party-notice-text strong {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ic-party-notice-text span {
+  color: var(--ic-muted);
+  font-size: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.ic-party-status {
-  color: #a0a0a0;
-  white-space: nowrap;
-}
-
-.ic-party-action {
-  padding: 2px 8px;
-  background: #3a3d45;
-  border: 0;
-  border-radius: 4px;
-  font-size: 0.75rem;
-}
-
-.ic-party-banner {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-left: 4px solid #f47521;
-}
-
-.ic-party-banner span {
-  flex: 1;
-}
-
-.ic-party-banner button {
+.ic-party-primary {
   flex: none;
-  padding: 6px 12px;
-  background: #3a3d45;
+  height: 32px;
+  padding: 0 12px;
   border: 0;
-  border-radius: 4px;
-  font-weight: 600;
+  border-radius: 8px;
+  background: var(--ic-orange);
+  color: #111;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.ic-party-banner button.primary {
-  background: #f47521;
+.ic-party-primary:hover {
+  filter: brightness(1.1);
 }
+
+/* ---- toast ---- */
 
 .ic-party-toast {
   position: fixed;
@@ -132,10 +273,15 @@
   transform: translateX(-50%);
   z-index: 2147483001;
   padding: 10px 16px;
-  background: #23252b;
-  border-radius: 6px;
-  box-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
-  color: #fff;
-  font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.875rem;
+  border: 1px solid var(--ic-hairline, rgb(255 255 255 / 0.08));
+  border-radius: 10px;
+  background: rgb(28 29 34 / 0.96);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.5);
+  color: var(--ic-text, #f2f2f3);
+  font: 600 0.875rem/1.3 var(--ic-font, Lato, 'Helvetica Neue', Arial, sans-serif);
+}
+
+@keyframes ic-party-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

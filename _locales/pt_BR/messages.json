@@ -132,8 +132,20 @@
   "fillerBannerAsk": {
     "message": "Este episódio é {type} (AFL #{n})."
   },
+  "fillerBannerAskDetail": {
+    "message": "Pular para o próximo episódio que você assiste?"
+  },
   "fillerBannerNoTarget": {
     "message": "Este episódio é {type} (AFL #{n}) e não há episódio posterior para assistir."
+  },
+  "fillerBannerNoTargetDetail": {
+    "message": "Não há episódio posterior para assistir."
+  },
+  "fillerClose": {
+    "message": "Fechar"
+  },
+  "fillerEpisodeN": {
+    "message": "Episódio #{n}"
   },
   "fillerFixOffset": {
     "message": "Ajustar numeração dos episódios…"
@@ -151,7 +163,7 @@
     "message": "Cole o link (ou o slug) do AnimeFillerList para esta série. Deixe vazio para voltar à detecção automática."
   },
   "fillerGoBack": {
-    "message": "Voltar e assistir"
+    "message": "Assistir"
   },
   "fillerNoData": {
     "message": "Sem dados no AFL"
@@ -171,11 +183,17 @@
   "fillerShowUnavailable": {
     "message": "AnimeFillerList indisponível"
   },
+  "fillerSkippedDetail": {
+    "message": "{count} episódio(s) · AFL {range}"
+  },
+  "fillerSkippedTitle": {
+    "message": "Fillers pulados"
+  },
   "fillerSkippedToast": {
     "message": "Pulei {count} episódio(s) (AFL {range})."
   },
   "fillerSkipTo": {
-    "message": "Pular para o #{n}"
+    "message": "Pular p/ #{n}"
   },
   "fillerTypeAnimeCanon": {
     "message": "Canon do anime"
@@ -190,7 +208,7 @@
     "message": "Misto"
   },
   "fillerWatchAnyway": {
-    "message": "Assistir mesmo assim"
+    "message": "Assistir"
   },
   "fullscreenMode": {
     "message": "Modo tela cheia"
@@ -266,6 +284,9 @@
   "openHeaderMenuOnHover": {
     "message": "Abra o menu de cabeçalho ao passar o mouse"
   },
+  "partyAlone": {
+    "message": "Ninguém mais por aqui. Mande o link de convite para os amigos."
+  },
   "partyAutoplayBlocked": {
     "message": "O navegador bloqueou o play automático."
   },
@@ -276,7 +297,7 @@
     "message": "Link do convite ou código da sala"
   },
   "partyCodePlaceholder": {
-    "message": "Cole aqui"
+    "message": "Link ou código do convite"
   },
   "partyConnection_connecting": {
     "message": "Conectando…"
@@ -296,8 +317,11 @@
   "partyCopy": {
     "message": "Copiar"
   },
+  "partyCopyInvite": {
+    "message": "Copiar link de convite"
+  },
   "partyCreate": {
-    "message": "Criar sala (você lidera)"
+    "message": "Criar sala"
   },
   "partyError_background": {
     "message": "Não consegui falar com a extensão. Recarregue-a em brave://extensions."
@@ -323,8 +347,14 @@
   "partyFollowing": {
     "message": "Watch party · seguindo {name} · {count}"
   },
+  "partyFollowingShort": {
+    "message": "Seguindo {name}"
+  },
+  "partyHeroTitle": {
+    "message": "Assistam juntos"
+  },
   "partyIntro": {
-    "message": "Assistam juntos: cada um usa a própria conta do Crunchyroll e o líder controla play, pausa, avanço e episódios."
+    "message": "Cada um na própria conta; o líder controla play, pausa, avanço e episódios."
   },
   "partyInvite": {
     "message": "Link de convite"
@@ -333,22 +363,28 @@
     "message": "Entrar nesta watch party{server}? Digite seu apelido:"
   },
   "partyJoin": {
-    "message": "Entrar na sala"
+    "message": "Entrar"
   },
   "partyJoinFailed": {
     "message": "Não consegui entrar na watch party."
+  },
+  "partyJoinSection": {
+    "message": "Entrar com convite"
   },
   "partyLeader": {
     "message": "líder"
   },
   "partyLeaderHint": {
-    "message": "Você lidera: o que você der play, pausar, pular ou abrir, todo mundo segue."
+    "message": "O que você der play, pausar, pular ou abrir, todo mundo segue."
   },
   "partyLeaderOnly": {
     "message": "Só o líder controla a sessão"
   },
   "partyLeave": {
     "message": "Sair da sala"
+  },
+  "partyMembersTitle": {
+    "message": "Na sala · {count}"
   },
   "partyName": {
     "message": "Seu apelido"
@@ -359,14 +395,26 @@
   "partyOr": {
     "message": "ou"
   },
+  "partyPeople": {
+    "message": "{count} na sala"
+  },
   "partyPromote": {
     "message": "Passar liderança"
+  },
+  "partyPromoteShort": {
+    "message": "Liderar"
   },
   "partyReconnect": {
     "message": "Reconectar"
   },
   "partyReconnecting": {
     "message": "Watch party · reconectando…"
+  },
+  "partyReconnectingShort": {
+    "message": "Reconectando…"
+  },
+  "partyRoom": {
+    "message": "Sala"
   },
   "partyServer": {
     "message": "Servidor (avançado)"
@@ -393,13 +441,19 @@
     "message": "episódio indisponível"
   },
   "partyWaiting": {
-    "message": "Esperando {names}…"
+    "message": "Ainda carregando: {names}"
+  },
+  "partyWaitingTitle": {
+    "message": "Esperando todo mundo carregar"
   },
   "partyYou": {
     "message": "você"
   },
   "partyYouLead": {
     "message": "Watch party · você lidera · {count}"
+  },
+  "partyYouLeadShort": {
+    "message": "Você lidera"
   },
   "pictureInPicture": {
     "message": "Picture-in-Picture"

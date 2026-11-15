@@ -132,8 +132,20 @@
   "fillerBannerAsk": {
     "message": "This episode is {type} (AFL #{n})."
   },
+  "fillerBannerAskDetail": {
+    "message": "Skip to the next episode you watch?"
+  },
   "fillerBannerNoTarget": {
     "message": "This episode is {type} (AFL #{n}) and no later episode to watch is available."
+  },
+  "fillerBannerNoTargetDetail": {
+    "message": "No later episode to watch is available."
+  },
+  "fillerClose": {
+    "message": "Close"
+  },
+  "fillerEpisodeN": {
+    "message": "Episode #{n}"
   },
   "fillerFixOffset": {
     "message": "Adjust episode numbering…"
@@ -171,6 +183,12 @@
   "fillerShowUnavailable": {
     "message": "AnimeFillerList unavailable"
   },
+  "fillerSkippedDetail": {
+    "message": "{count} episode(s) · AFL {range}"
+  },
+  "fillerSkippedTitle": {
+    "message": "Fillers skipped"
+  },
   "fillerSkippedToast": {
     "message": "Skipped {count} episode(s) (AFL {range})."
   },
@@ -190,7 +208,7 @@
     "message": "Mixed"
   },
   "fillerWatchAnyway": {
-    "message": "Watch anyway"
+    "message": "Watch"
   },
   "fullscreenMode": {
     "message": "Fullscreen mode"
@@ -266,6 +284,9 @@
   "openHeaderMenuOnHover": {
     "message": "Open header menu on hover"
   },
+  "partyAlone": {
+    "message": "Nobody else yet. Send the invite link to your friends."
+  },
   "partyAutoplayBlocked": {
     "message": "The browser blocked autoplay."
   },
@@ -276,7 +297,7 @@
     "message": "Invite link or room code"
   },
   "partyCodePlaceholder": {
-    "message": "Paste here"
+    "message": "Invite link or code"
   },
   "partyConnection_connecting": {
     "message": "Connecting…"
@@ -296,8 +317,11 @@
   "partyCopy": {
     "message": "Copy"
   },
+  "partyCopyInvite": {
+    "message": "Copy invite link"
+  },
   "partyCreate": {
-    "message": "Create room (you lead)"
+    "message": "Create room"
   },
   "partyError_background": {
     "message": "Could not reach the extension. Reload it in brave://extensions."
@@ -323,8 +347,14 @@
   "partyFollowing": {
     "message": "Watch party · following {name} · {count}"
   },
+  "partyFollowingShort": {
+    "message": "Following {name}"
+  },
+  "partyHeroTitle": {
+    "message": "Watch together"
+  },
   "partyIntro": {
-    "message": "Watch together: everyone uses their own Crunchyroll account and the leader controls play, pause, seeking and episodes."
+    "message": "Everyone uses their own account; the leader controls play, pause, seeking and episodes."
   },
   "partyInvite": {
     "message": "Invite link"
@@ -333,22 +363,28 @@
     "message": "Join this watch party{server}? Type your nickname:"
   },
   "partyJoin": {
-    "message": "Join room"
+    "message": "Join"
   },
   "partyJoinFailed": {
     "message": "Could not join the watch party."
+  },
+  "partyJoinSection": {
+    "message": "Join with an invite"
   },
   "partyLeader": {
     "message": "leader"
   },
   "partyLeaderHint": {
-    "message": "You lead: whatever you play, pause, skip or open, everyone follows."
+    "message": "Whatever you play, pause, skip or open, everyone follows."
   },
   "partyLeaderOnly": {
     "message": "Only the leader controls the session"
   },
   "partyLeave": {
     "message": "Leave room"
+  },
+  "partyMembersTitle": {
+    "message": "In the room · {count}"
   },
   "partyName": {
     "message": "Your nickname"
@@ -359,14 +395,26 @@
   "partyOr": {
     "message": "or"
   },
+  "partyPeople": {
+    "message": "{count} in the room"
+  },
   "partyPromote": {
     "message": "Make leader"
+  },
+  "partyPromoteShort": {
+    "message": "Lead"
   },
   "partyReconnect": {
     "message": "Reconnect"
   },
   "partyReconnecting": {
     "message": "Watch party · reconnecting…"
+  },
+  "partyReconnectingShort": {
+    "message": "Reconnecting…"
+  },
+  "partyRoom": {
+    "message": "Room"
   },
   "partyServer": {
     "message": "Server (advanced)"
@@ -393,13 +441,19 @@
     "message": "episode unavailable"
   },
   "partyWaiting": {
-    "message": "Waiting for {names}…"
+    "message": "Still loading: {names}"
+  },
+  "partyWaitingTitle": {
+    "message": "Waiting for everyone to load"
   },
   "partyYou": {
     "message": "you"
   },
   "partyYouLead": {
     "message": "Watch party · you lead · {count}"
+  },
+  "partyYouLeadShort": {
+    "message": "You lead"
   },
   "pictureInPicture": {
     "message": "Picture-in-Picture"

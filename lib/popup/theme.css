@@ -1,0 +1,211 @@
+/* Tema do fork: refina o visual do popup sem mexer nos estilos originais (carregado por último). */
+
+html {
+  --crunchyroll-orange: #f47521;
+  --primary: #1c1d22;
+  --secondary: #0f1013;
+  --tertiary: #0a0b0d;
+  --primary-font: #a3a5ad;
+  --secondary-font: #f2f2f3;
+  --hover-background: #25262c;
+  --hairline: rgb(255 255 255 / 0.07);
+  --orange-soft: rgb(244 117 33 / 0.14);
+  --radius: 10px;
+}
+
+html,
+body,
+#content {
+  background-color: var(--secondary);
+}
+
+body {
+  font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#content {
+  font-size: 13.5px;
+}
+
+#content::-webkit-scrollbar-thumb {
+  background-color: #3a3c44;
+  border-radius: 3px;
+}
+
+/* ---- cabeçalho ---- */
+
+#header {
+  height: 52px;
+  background: #16171b;
+  box-shadow: none;
+  border-bottom: 1px solid var(--hairline);
+}
+
+#header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.returnButton {
+  width: 34px;
+  height: 34px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.returnButton:hover {
+  background-color: var(--hover-background);
+}
+
+/* ---- tela inicial ---- */
+
+#tab {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 14px 12px;
+  box-sizing: border-box;
+  align-content: start;
+}
+
+.folder {
+  width: auto;
+  padding: 16px 4px 13px;
+  gap: 10px;
+  background: var(--primary);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.folder:hover {
+  background: var(--hover-background);
+  border-color: rgb(244 117 33 / 0.35);
+}
+
+.folder svg {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: var(--orange-soft);
+  box-shadow: none;
+  fill: var(--crunchyroll-orange);
+  transition: transform 0.2s;
+}
+
+.folder:hover svg {
+  transform: scale(1.06);
+}
+
+/* ---- seções e itens ---- */
+
+section {
+  margin: 14px 12px;
+}
+
+.section-label {
+  padding: 0 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--crunchyroll-orange);
+}
+
+.section-content {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--primary);
+  box-shadow: none;
+  border: 1px solid var(--hairline);
+}
+
+.section-content > * + * {
+  border-top: 1px solid var(--hairline);
+}
+
+.item {
+  height: 46px;
+  padding: 0 14px;
+  gap: 12px;
+}
+
+.item > span:first-child {
+  color: var(--secondary-font);
+}
+
+.item > span:nth-child(2) {
+  color: var(--primary-font);
+  white-space: nowrap;
+}
+
+/* seletores: valor em laranja com seta, para parecer clicável */
+.item:has(> select.select) > span:nth-child(2) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--crunchyroll-orange);
+  font-weight: 600;
+}
+
+.item:has(> select.select) > span:nth-child(2)::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* ---- switch ---- */
+
+.switch {
+  min-width: 38px;
+  width: 38px;
+  height: 22px;
+}
+
+.slider {
+  border-radius: 11px;
+  background-color: #3a3c44;
+}
+
+.slider:before {
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  bottom: 3px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+.switch[value='true'] .slider:before {
+  transform: translateX(16px);
+}
+
+/* ---- campos e botões genéricos ---- */
+
+.input {
+  height: 28px;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: var(--tertiary);
+}
+
+.input:focus {
+  border-radius: 6px;
+  outline: 1px solid var(--crunchyroll-orange);
+}
+
+.shortcut span {
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  font-weight: 600;
+}
