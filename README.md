@@ -1,3 +1,9 @@
+> **Fork com detecção de fillers.** Este fork adiciona um selo canon/filler/misto (dados do
+> [AnimeFillerList](https://www.animefillerlist.com)) na página do episódio e nos cards da série, e uma opção
+> de pular fillers (perguntar ou automático) em *Integrações → Fillers*. A série é casada pelo título; se errar,
+> clique no selo do episódio para apontar o link certo do AFL ou ajustar a numeração. Única permissão extra:
+> leitura de `https://www.animefillerlist.com/*`.
+
 # Improve Crunchyroll
 
 #### [Chrome Web Store](https://chrome.google.com/webstore/detail/crunchyroll-bigger-player/elmhfjhlecffodalffipmgpploaihjgh)

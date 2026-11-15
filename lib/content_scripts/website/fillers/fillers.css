@@ -1,0 +1,129 @@
+:root {
+  --ic-filler-canon: #2e9e5b;
+  --ic-filler-anime-canon: #2f7fd1;
+  --ic-filler-mixed: #d69a1a;
+  --ic-filler-filler: #d0443a;
+  --ic-filler-unknown: #6b6f76;
+}
+
+[data-type='canon'] { --ic-filler-color: var(--ic-filler-canon); }
+[data-type='anime_canon'] { --ic-filler-color: var(--ic-filler-anime-canon); }
+[data-type='mixed'] { --ic-filler-color: var(--ic-filler-mixed); }
+[data-type='filler'] { --ic-filler-color: var(--ic-filler-filler); }
+[data-type='unknown'] { --ic-filler-color: var(--ic-filler-unknown); }
+
+.ic-filler-badge-wrapper {
+  position: relative;
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+.ic-filler-badge,
+.ic-filler-tag {
+  background: var(--ic-filler-color);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font: 600 0.8125rem/1.4 inherit;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.ic-filler-badge {
+  padding: 3px 10px;
+  cursor: pointer;
+}
+
+.ic-filler-badge:hover {
+  filter: brightness(1.12);
+}
+
+.ic-filler-tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 1px 6px;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  pointer-events: auto;
+}
+
+.ic-filler-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 1000;
+  min-width: 240px;
+  padding: 6px 0;
+  background: #23252b;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.45);
+}
+
+.ic-filler-menu.open {
+  display: block;
+}
+
+.ic-filler-menu-item {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: 0;
+  color: #dadada;
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ic-filler-menu-item:hover {
+  background: #141519;
+  color: #fff;
+}
+
+.ic-filler-banner {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  padding: 10px 12px 10px 16px;
+  background: #23252b;
+  border-left: 4px solid var(--ic-filler-color, var(--ic-filler-canon));
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.5);
+  color: #fff;
+  font-family: Lato, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9375rem;
+}
+
+.ic-filler-banner.toast {
+  top: auto;
+  bottom: 96px;
+}
+
+.ic-filler-banner button {
+  flex: none;
+  padding: 6px 12px;
+  background: #3a3d45;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ic-filler-banner button.primary {
+  background: #f47521;
+}
+
+.ic-filler-banner button:hover {
+  filter: brightness(1.15);
+}

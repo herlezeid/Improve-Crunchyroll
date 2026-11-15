@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
-  "version": "5.1.1",
+  "version": "5.1.1.1",
+  "version_name": "5.1.1-fillers",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "author": "Thomas Tavernier <thomas@tavernier.dev>",
@@ -10,6 +11,9 @@
   },
   "permissions": [
     "storage"
+  ],
+  "host_permissions": [
+    "https://www.animefillerlist.com/*"
   ],
   "action": {
     "default_popup": "lib/popup/index.html"
@@ -74,6 +78,7 @@
         "lib/content_scripts/website/pages/watch/player/shortcuts/shortcuts.js",
         "lib/content_scripts/website/pages/watch/player/skippers/skippers.js",
         "lib/content_scripts/website/pages/watch/player/player.js",
+        "lib/content_scripts/website/fillers/fillers.js",
         "lib/content_scripts/website/pages/watch/watch.js",
         "lib/content_scripts/website/main.js"
       ],
@@ -90,6 +95,7 @@
         "lib/content_scripts/website/pages/watch/player/player.css",
         "lib/content_scripts/website/pages/watch/watch.css",
         "lib/content_scripts/website/pages/utils.css",
+        "lib/content_scripts/website/fillers/fillers.css",
         "lib/content_scripts/website/main.css"
       ],
       "run_at": "document_idle"

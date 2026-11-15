@@ -23,6 +23,9 @@
   "animeListLinks": {
     "message": "Links da lista de animes"
   },
+  "askToSkip": {
+    "message": "Perguntar"
+  },
   "autoSkip": {
     "message": "Pular automático"
   },
@@ -90,6 +93,9 @@
   "doNotShow": {
     "message": "Não mostrar"
   },
+  "doNotSkip": {
+    "message": "Não pular"
+  },
   "editFastBackwardShortcut": {
     "message": "Editar atalho de voltar"
   },
@@ -119,6 +125,72 @@
   },
   "fastForwardShortcuts": {
     "message": "Atalhos de pular"
+  },
+  "fillerBadges": {
+    "message": "Mostrar selo canon/filler"
+  },
+  "fillerBannerAsk": {
+    "message": "Este episódio é {type} (AFL #{n})."
+  },
+  "fillerBannerNoTarget": {
+    "message": "Este episódio é {type} (AFL #{n}) e não há episódio posterior para assistir."
+  },
+  "fillerFixOffset": {
+    "message": "Ajustar numeração dos episódios…"
+  },
+  "fillerFixOffsetPrompt": {
+    "message": "Quanto somar ao número do Crunchyroll para chegar ao número do AnimeFillerList.\n\nEste episódio: Crunchyroll #{crunchyroll} → AFL #{afl}"
+  },
+  "fillerFixShow": {
+    "message": "Trocar anime do AnimeFillerList…"
+  },
+  "fillerFixShowInvalid": {
+    "message": "Link inválido. Use algo como https://www.animefillerlist.com/shows/dragon-ball-z"
+  },
+  "fillerFixShowPrompt": {
+    "message": "Cole o link (ou o slug) do AnimeFillerList para esta série. Deixe vazio para voltar à detecção automática."
+  },
+  "fillerGoBack": {
+    "message": "Voltar e assistir"
+  },
+  "fillerNoData": {
+    "message": "Sem dados no AFL"
+  },
+  "fillerOpenAfl": {
+    "message": "Abrir no AnimeFillerList"
+  },
+  "fillerResetFix": {
+    "message": "Desfazer correções manuais"
+  },
+  "fillers": {
+    "message": "Fillers (AnimeFillerList)"
+  },
+  "fillerShowNotFound": {
+    "message": "Não achei no AnimeFillerList"
+  },
+  "fillerShowUnavailable": {
+    "message": "AnimeFillerList indisponível"
+  },
+  "fillerSkippedToast": {
+    "message": "Pulei {count} episódio(s) (AFL {range})."
+  },
+  "fillerSkipTo": {
+    "message": "Pular para o #{n}"
+  },
+  "fillerTypeAnimeCanon": {
+    "message": "Canon do anime"
+  },
+  "fillerTypeCanon": {
+    "message": "Canon"
+  },
+  "fillerTypeFiller": {
+    "message": "Filler"
+  },
+  "fillerTypeMixed": {
+    "message": "Misto"
+  },
+  "fillerWatchAnyway": {
+    "message": "Assistir mesmo assim"
   },
   "fullscreenMode": {
     "message": "Modo tela cheia"
@@ -248,8 +320,17 @@
   "skip": {
     "message": "Pular"
   },
+  "skipAnimeCanon": {
+    "message": "Canon do anime"
+  },
   "skipEvents": {
     "message": "Pular eventos"
+  },
+  "skipFiller": {
+    "message": "Episódios filler"
+  },
+  "skipMixed": {
+    "message": "Misto canon/filler"
   },
   "skipShortcut": {
     "message": "Pular"
